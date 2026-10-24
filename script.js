@@ -281,16 +281,12 @@ function createProductCard(product) {
     `;
 
 
-   card.querySelector("button").addEventListener("click", (event) => {
-    console.log("SPECIFICATIONS BUTTON CLICKED");
+   const specsButton = card.querySelector("button");
+
+specsButton.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
-
-    try {
-        openProductModal(product);
-    } catch (error) {
-        console.error("Unable to open product modal:", error);
-    }
+    openProductModal(product);
 });
 
 
