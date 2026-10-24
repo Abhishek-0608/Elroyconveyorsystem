@@ -281,15 +281,14 @@ function createProductCard(product) {
     `;
 
 
-   card.addEventListener("click", (event) => {
-    console.log("CARD HANDLER RUNNING");
-    console.log("REAL CLICK:", event.target);
+   card.querySelector("button").addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
 
     try {
         openProductModal(product);
-        console.log("MODAL FUNCTION CALLED");
     } catch (error) {
-        console.error("MODAL ERROR:", error);
+        console.error("Unable to open product modal:", error);
     }
 });
 
