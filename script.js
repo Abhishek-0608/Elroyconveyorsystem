@@ -281,11 +281,10 @@ function createProductCard(product) {
     `;
 
 
-    card.addEventListener("click", () => {
-
-        openProductModal(product);
-
-    });
+    card.addEventListener("click", (event) => {
+    console.log("REAL CLICK:", event.target);
+    openProductModal(product);
+});
 
 
     return card;
