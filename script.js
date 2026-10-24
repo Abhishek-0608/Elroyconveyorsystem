@@ -282,6 +282,7 @@ function createProductCard(product) {
 
 
    card.querySelector("button").addEventListener("click", (event) => {
+    console.log("SPECIFICATIONS BUTTON CLICKED");
     event.preventDefault();
     event.stopPropagation();
 
