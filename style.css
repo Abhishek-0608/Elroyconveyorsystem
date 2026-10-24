@@ -665,12 +665,11 @@ textarea {
         12px 0 20px;
 }
 .product-row {
-    display:
-        flex;
-    gap:
-        20px;
-    width:
-        max-content;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 20px;
+    width: max-content;
 }
 /*
 ROW 1
@@ -5077,7 +5076,7 @@ main > section:not(.hero).scroll-reveal.is-visible {
 }
 
 .product-row.is-dragging .product-card {
-    pointer-events: none;
+    pointer-events: auto;
 }
 
 /* Keep the existing conveyor animation and hide scrollbars */

@@ -451,12 +451,12 @@ row.classList.add("is-dragging");
     row.addEventListener("lostpointercapture", finishDrag);
 
     row.addEventListener("click", (event) => {
-        if (row.dataset.dragged === "true") {
-            event.preventDefault();
-            event.stopImmediatePropagation();
-            delete row.dataset.dragged;
-        }
-    }, true);
+    if (row.dataset.dragged === "true") {
+        event.preventDefault();
+        event.stopPropagation();
+        delete row.dataset.dragged;
+    }
+}, true);
 });
 
 
