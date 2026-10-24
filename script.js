@@ -388,9 +388,7 @@ populateRow(
         pointerId = event.pointerId;
 
         animation.pause();
-        row.classList.add("is-dragging");
-
-        row.setPointerCapture(pointerId);
+row.classList.add("is-dragging");
     });
 
     row.addEventListener("pointermove", (event) => {
@@ -398,9 +396,10 @@ populateRow(
 
         const deltaX = event.clientX - startX;
 
-        if (Math.abs(deltaX) > 5) {
-            hasMoved = true;
-        }
+        if (Math.abs(deltaX) > 5 && !hasMoved) {
+    hasMoved = true;
+    row.setPointerCapture(pointerId);
+}
 
         if (!hasMoved || !animation) return;
 
