@@ -281,9 +281,16 @@ function createProductCard(product) {
     `;
 
 
-    card.addEventListener("click", (event) => {
+   card.addEventListener("click", (event) => {
+    console.log("CARD HANDLER RUNNING");
     console.log("REAL CLICK:", event.target);
-    openProductModal(product);
+
+    try {
+        openProductModal(product);
+        console.log("MODAL FUNCTION CALLED");
+    } catch (error) {
+        console.error("MODAL ERROR:", error);
+    }
 });
 
 
